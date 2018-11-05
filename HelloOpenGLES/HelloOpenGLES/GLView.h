@@ -20,19 +20,9 @@
     
     GLProgram *_glProgram;
     GLuint _position,_color,_inputImageTexture,_inputTextureCoordinate;
-//    GLuint _bufferData;
-//    GLuint _indexsBuffer;
     
-    GLfloat *_positions;
     GLTexture *_texture;
-    
+    CGSize _renderbufferSize;
 }
-
-
-- (void)open:(NSTimeInterval)duration
-  completion:(void (^)())completion;
-
-- (void)close:(NSTimeInterval)duration
-   completion:(void (^)())completion;
 
 @end

@@ -13,6 +13,7 @@
 		C6CA07E8218C279400A2733A /* GLProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CA07E6218C279300A2733A /* GLProgram.m */; };
 		C6CA07EB218C28AE00A2733A /* 1.fsh in Resources */ = {isa = PBXBuildFile; fileRef = C6CA07E9218C28AD00A2733A /* 1.fsh */; };
 		C6CA07EC218C28AE00A2733A /* 1.vsh in Resources */ = {isa = PBXBuildFile; fileRef = C6CA07EA218C28AD00A2733A /* 1.vsh */; };
+		C6CE3FA621901359005006BF /* img_cheryl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C6CE3FA521901358005006BF /* img_cheryl.jpg */; };
 		C97C36710CAD0F78F4F3A4D0 /* libPods-HelloOpenGLES.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2C877BCAE3DC6A4C09C3EE9 /* libPods-HelloOpenGLES.a */; };
 		DFD50FA61D50731300819CAF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD50FA51D50731300819CAF /* main.m */; };
 		DFD50FA91D50731300819CAF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD50FA81D50731300819CAF /* AppDelegate.m */; };
@@ -34,6 +35,7 @@
 		C6CA07E7218C279300A2733A /* GLProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLProgram.h; sourceTree = "<group>"; };
 		C6CA07E9218C28AD00A2733A /* 1.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 1.fsh; sourceTree = "<group>"; };
 		C6CA07EA218C28AD00A2733A /* 1.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 1.vsh; sourceTree = "<group>"; };
+		C6CE3FA521901358005006BF /* img_cheryl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img_cheryl.jpg; sourceTree = "<group>"; };
 		C9C3E3E0C96E08989D2E3899 /* Pods-HelloOpenGLES.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloOpenGLES.release.xcconfig"; path = "Pods/Target Support Files/Pods-HelloOpenGLES/Pods-HelloOpenGLES.release.xcconfig"; sourceTree = "<group>"; };
 		DFD50FA11D50731300819CAF /* HelloOpenGLES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloOpenGLES.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFD50FA51D50731300819CAF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				C6CA07E9218C28AD00A2733A /* 1.fsh */,
 				C6CA07EA218C28AD00A2733A /* 1.vsh */,
 				C649F964218FEF6500E52B5C /* 123.jpg */,
+				C6CE3FA521901358005006BF /* img_cheryl.jpg */,
 				DFD50FAD1D50731300819CAF /* Main.storyboard */,
 				DFD50FB01D50731300819CAF /* Assets.xcassets */,
 				DFD50FB21D50731300819CAF /* LaunchScreen.storyboard */,
@@ -195,6 +198,7 @@
 				C6CA07EB218C28AE00A2733A /* 1.fsh in Resources */,
 				DFD50FB11D50731300819CAF /* Assets.xcassets in Resources */,
 				DFD50FAF1D50731300819CAF /* Main.storyboard in Resources */,
+				C6CE3FA621901359005006BF /* img_cheryl.jpg in Resources */,
 				C6CA07EC218C28AE00A2733A /* 1.vsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

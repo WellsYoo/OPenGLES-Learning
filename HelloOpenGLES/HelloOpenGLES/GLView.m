@@ -7,24 +7,16 @@
 //
 
 #import "GLView.h"
-#import "MTTimerTask.h"
+#import "GLProgram.h"
 #import <GLKit/GLKit.h>
 #import "GLTexture.h"
-#import "GLProgram.h"
 
 @import OpenGLES;
 
-static const GLubyte gl_index_buffer_data[] = {
-    0,1,2,
-    1,2,3,
-    
-    4,7,6,
-    7,4,5
-};
-
 @implementation GLView
 
-- (void)dealloc {
+- (void)dealloc
+{
     if (_framebuffer) {
         glDeleteFramebuffers(1, &_framebuffer);
         _framebuffer = 0;
@@ -36,12 +28,13 @@ static const GLubyte gl_index_buffer_data[] = {
     }
 }
 
-+ (Class)layerClass {
++ (Class)layerClass
+{
     return [CAEAGLLayer class];
 }
 
-- (void)setup {
-    
+- (void)setup
+{
     // 用于显示的layer
     _eaglLayer = (CAEAGLLayer *)self.layer;
     
@@ -120,17 +113,18 @@ static const GLubyte gl_index_buffer_data[] = {
     // 获取顶点属性的id
     _position = [_glProgram attributeIndex:@"position"];
     _color = [_glProgram attributeIndex:@"color"];
-    
-//    if (!_positions) {
-//        _positions = malloc(sizeof(GLfloat) * 8 * 3);
-//        [self calculationGLData:1.0 isOpen:NO];
-//    }
-    
     _inputTextureCoordinate = [_glProgram attributeIndex:@"inputTextureCoordinate"];
     
     _inputImageTexture = [_glProgram uniformIndex:@"inputImageTexture"];
     
-    _texture = [[UIImage imageNamed:@"123.jpg"] texture];
+    
+    _texture = [[UIImage imageNamed:@"img_cheryl.jpg"] texture];
+    //    _texture = [[UIImage imageNamed:@"123.jpg"] texture];
+    
+    GLint width,height;
+    glGetRenderbufferParameteriv(GL_RENDERBUFFER,GL_RENDERBUFFER_WIDTH, &width);
+    glGetRenderbufferParameteriv(GL_RENDERBUFFER,GL_RENDERBUFFER_HEIGHT, &height);
+    _renderbufferSize = CGSizeMake(width, height);
 }
 
 - (BOOL)checkFramebuffer:(NSError *__autoreleasing *)error
@@ -172,7 +166,8 @@ static const GLubyte gl_index_buffer_data[] = {
     return result;
 }
 
-- (void)layoutSubviews {
+- (void)layoutSubviews
+{
     [super layoutSubviews];
     
     CGSize size = self.frame.size;
@@ -185,22 +180,19 @@ static const GLubyte gl_index_buffer_data[] = {
     [self render];
 }
 
-- (void)render {
-    
+- (void)render
+{
     // 因为GL的所有API都是基于最后一次绑定的对象作为作用对象。有很多错误是因为没有绑定或者绑定了错误的对象导致得到了错误的结果。
     // 所以每次在修改GL对象时，先绑定一次要修改的对象。
     glBindFramebuffer(GL_FRAMEBUFFER, _framebuffer);
     glBindRenderbuffer(GL_RENDERBUFFER, _renderbuffer);
-    
-//    glBindBuffer(GL_ARRAY_BUFFER, _bufferData);
-//    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexsBuffer);
     
     glClearColor(0, 1, 0, 1);
     glClear(GL_COLOR_BUFFER_BIT);
     
     
     // viewPort关系着GL坐标系的大小及位置
-    glViewport(0, 0, self.frame.size.width, self.frame.size.height);
+    glViewport(0, 0, _renderbufferSize.width, _renderbufferSize.height);
     
     // 使用program
     [_glProgram use];
@@ -208,6 +200,7 @@ static const GLubyte gl_index_buffer_data[] = {
     //启用顶点属性
     glEnableVertexAttribArray(_position);
     glEnableVertexAttribArray(_color);
+    glEnableVertexAttribArray(_inputTextureCoordinate);
     
     // 包含3个4维向量的数组
     static const GLfloat g_color_buffer_data[] =
@@ -224,66 +217,73 @@ static const GLubyte gl_index_buffer_data[] = {
         0.0,0.0,0.0,1.0,
     };
     
-    //向顶点属性传递数据
-    glVertexAttribPointer(_position, 3, GL_FLOAT, NO, 0, _positions);
-    glVertexAttribPointer(_color, 4, GL_FLOAT, NO, 0, g_color_buffer_data);
+    static const GLubyte gl_index_buffer_data[] =
+    {
+        0,1,2,
+        1,2,3,
+        
+        4,5,6,
+        5,6,7
+    };
     
-//    glDrawArrays(GL_TRIANGLES, 0, sizeof(gl_index_buffer_data) / sizeof(GLubyte));
+    
+    CGRect textureFrame = CGRectMake(0, 100, _texture.size.width * 3, _texture.size.height * 3);
+    GLKVector2 *position = CGRectConvertToVertex(textureFrame, _renderbufferSize);
+    GLKVector2 texCoord[] = {0.0f,0.0f,
+        3.0f,0.0f,
+        0.0f,3.0f,
+        3.0f,3.0f};
+    
+    
+    glActiveTexture(GL_TEXTURE0);
+    glBindBuffer(GL_TEXTURE_2D, [_texture texture]);
+    glUniform1i(_inputImageTexture, 0);
+    
+    //向顶点属性传递数据
+    glVertexAttribPointer(_position, 2, GL_FLOAT, NO, 0, position);
+    glVertexAttribPointer(_color, 4, GL_FLOAT, NO, 0, g_color_buffer_data);
+    glVertexAttribPointer(_inputTextureCoordinate, 2, GL_FLOAT, NO, 0, texCoord);
+    
     //调用glDrawArrays
     glDrawElements(GL_TRIANGLES, sizeof(gl_index_buffer_data) / sizeof(GLubyte), GL_UNSIGNED_BYTE, gl_index_buffer_data);
     
     // 做完所有绘制操作后，最终呈现到屏幕上
     [_context presentRenderbuffer:GL_RENDERBUFFER];
+    
+    free(position);
 }
 
-- (void)open:(NSTimeInterval)duration
-  completion:(void (^)())completion {
-    MTTimerTask *timerTask = [[MTTimerTask alloc] initWithDuration:duration];
-    timerTask.refreshRate = 10;
-    timerTask.updateCallback = ^(CGFloat progress){
-        [self calculationGLData:progress isOpen:YES];
-        [self render];
-    };
-    timerTask.completion = completion;
-    timerTask.easingFunction = &BounceEaseOut;
-    [timerTask start];
+
+GLKVector2 * CGRectConvertToTexCoord(CGRect rect, CGSize spaceSize)
+{
+    GLKVector2 *texcoord = calloc(4, sizeof(GLKVector2));
+    
+    CGPoint topLeft = rect.origin;
+    CGPoint topRight = CGPointMake(rect.origin.x + rect.size.width, rect.origin.y);
+    CGPoint bottomRight = CGPointMake(rect.origin.x + rect.size.width, rect.origin.y + rect.size.height);
+    CGPoint bottomLeft = CGPointMake(rect.origin.x, rect.origin.y + rect.size.height);
+    
+    texcoord[0] = GLKVector2Make(bottomLeft.x / spaceSize.width , bottomLeft.y / spaceSize.height);
+    texcoord[1] = GLKVector2Make(bottomRight.x / spaceSize.width , bottomRight.y / spaceSize.height);
+    texcoord[2] = GLKVector2Make(topLeft.x / spaceSize.width , topLeft.y / spaceSize.height);
+    texcoord[3] = GLKVector2Make(topRight.x / spaceSize.width , topRight.y / spaceSize.height);
+    
+    return texcoord;
 }
 
-- (void)close:(NSTimeInterval)duration
-   completion:(void (^)())completion {
-    MTTimerTask *timerTask = [[MTTimerTask alloc] initWithDuration:duration];
-    timerTask.updateCallback = ^(CGFloat progress){
-        [self calculationGLData:progress isOpen:NO];
-        [self render];
-    };
-    timerTask.refreshRate = 60;
-    timerTask.completion = completion;
-    //    timerTask.easingFunction = &BounceEaseIn;
-    [timerTask start];
+void texCoordToVertex(GLKVector2 *texcoord,uint count)
+{
+    for (uint i = 0; i < count; i++) {
+        GLKVector2 temp = GLKVector2Make((texcoord[i].x - 0.5) / 0.5, (texcoord[i].y - 0.5) / 0.5);
+        texcoord[i] = temp;
+    }
 }
 
-- (void)calculationGLData:(CGFloat)progress isOpen:(BOOL)isOpen {
-    progress = isOpen ? progress : 1.0 - progress;
-    
-    GLKVector3 *bottomLeft = (GLKVector3 *)_positions;
-    GLKVector3 *bottomRight = ((GLKVector3 *)_positions) + 1;
-    GLKVector3 *topLeft = ((GLKVector3 *)_positions) + 2;
-    GLKVector3 *topRight = ((GLKVector3 *)_positions) + 3;
-    
-    *bottomLeft = GLKVector3Make(-1, -1 - progress, 0);
-    *bottomRight = GLKVector3Make(1, -1- progress, 0);
-    *topLeft = GLKVector3Make(-1, -progress, 0);
-    *topRight = GLKVector3Make( 1, -progress, 0);
-    
-    GLKVector3 *bottomLeft1 = ((GLKVector3 *)_positions) + 4;
-    GLKVector3 *bottomRight1 = ((GLKVector3 *)_positions) + 5;
-    GLKVector3 *topLeft1 = ((GLKVector3 *)_positions) + 6;
-    GLKVector3 *topRight1 = ((GLKVector3 *)_positions) + 7;
-    
-    *bottomLeft1 = GLKVector3Make(-1 , progress, 0);
-    *bottomRight1 = GLKVector3Make(1 , progress, 0);
-    *topLeft1 = GLKVector3Make(-1, 1 + progress, 0);
-    *topRight1 = GLKVector3Make(1 ,1 + progress, 0);
+GLKVector2 * CGRectConvertToVertex(CGRect rect, CGSize spaceSize)
+{
+    GLKVector2 *texCoord = CGRectConvertToTexCoord(rect, spaceSize);
+    texCoordToVertex(texCoord, 4);
+    return texCoord;
 }
 
 @end

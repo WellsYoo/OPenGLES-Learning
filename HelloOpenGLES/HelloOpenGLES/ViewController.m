@@ -15,17 +15,22 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view, typically from a nib.
     self.glView = [[GLView alloc] initWithFrame:self.view.bounds];
+    self.glView.contentScaleFactor = [UIScreen mainScreen].scale;
     [self.view addSubview:self.glView];
+    
+    //    CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update)];
+    //    [displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    [self open];
+- (void)update
+{
+    [_glView layoutSubviews];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,23 +38,21 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)open {
-    [self.glView open:3.0
-           completion:^() {
-               dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                   [self close];
-               });
-           }];
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    //    [self open];
 }
 
-- (void)close {
-    [self.glView close:3.0
-            completion:^() {
-                
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    [self open];
-                });
-            }];
+- (void)open
+{
+    
+}
+
+- (void)close
+{
+    
 }
 
 @end
