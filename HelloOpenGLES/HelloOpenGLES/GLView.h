@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GLProgram.h"
 
 @interface GLView : UIView
 {
@@ -15,6 +16,11 @@
     GLuint _framebuffer, _renderbuffer;
     
     CGSize _oldSize;
+    
+    GLProgram *_glProgram;
+    GLuint _position,_color;
+    GLuint _bufferData;
+    GLuint _indexsBuffer;
 }
 
 @end

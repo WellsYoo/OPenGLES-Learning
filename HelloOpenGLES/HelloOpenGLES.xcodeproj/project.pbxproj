@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C6CA07E8218C279400A2733A /* GLProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CA07E6218C279300A2733A /* GLProgram.m */; };
+		C6CA07EB218C28AE00A2733A /* 1.fsh in Resources */ = {isa = PBXBuildFile; fileRef = C6CA07E9218C28AD00A2733A /* 1.fsh */; };
+		C6CA07EC218C28AE00A2733A /* 1.vsh in Resources */ = {isa = PBXBuildFile; fileRef = C6CA07EA218C28AD00A2733A /* 1.vsh */; };
 		DFD50FA61D50731300819CAF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD50FA51D50731300819CAF /* main.m */; };
 		DFD50FA91D50731300819CAF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD50FA81D50731300819CAF /* AppDelegate.m */; };
 		DFD50FAC1D50731300819CAF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD50FAB1D50731300819CAF /* ViewController.m */; };
@@ -17,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C6CA07E6218C279300A2733A /* GLProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLProgram.m; sourceTree = "<group>"; };
+		C6CA07E7218C279300A2733A /* GLProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLProgram.h; sourceTree = "<group>"; };
+		C6CA07E9218C28AD00A2733A /* 1.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 1.fsh; sourceTree = "<group>"; };
+		C6CA07EA218C28AD00A2733A /* 1.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 1.vsh; sourceTree = "<group>"; };
 		DFD50FA11D50731300819CAF /* HelloOpenGLES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloOpenGLES.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFD50FA51D50731300819CAF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DFD50FA71D50731300819CAF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -65,8 +72,12 @@
 				DFD50FA81D50731300819CAF /* AppDelegate.m */,
 				DFD50FAA1D50731300819CAF /* ViewController.h */,
 				DFD50FAB1D50731300819CAF /* ViewController.m */,
+				C6CA07E7218C279300A2733A /* GLProgram.h */,
+				C6CA07E6218C279300A2733A /* GLProgram.m */,
 				DFD50FC01D50857600819CAF /* GLView.h */,
 				DFD50FC11D50857600819CAF /* GLView.m */,
+				C6CA07E9218C28AD00A2733A /* 1.fsh */,
+				C6CA07EA218C28AD00A2733A /* 1.vsh */,
 				DFD50FAD1D50731300819CAF /* Main.storyboard */,
 				DFD50FB01D50731300819CAF /* Assets.xcassets */,
 				DFD50FB21D50731300819CAF /* LaunchScreen.storyboard */,
@@ -142,8 +153,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFD50FB41D50731300819CAF /* LaunchScreen.storyboard in Resources */,
+				C6CA07EB218C28AE00A2733A /* 1.fsh in Resources */,
 				DFD50FB11D50731300819CAF /* Assets.xcassets in Resources */,
 				DFD50FAF1D50731300819CAF /* Main.storyboard in Resources */,
+				C6CA07EC218C28AE00A2733A /* 1.vsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +169,7 @@
 			files = (
 				DFD50FAC1D50731300819CAF /* ViewController.m in Sources */,
 				DFD50FC21D50857600819CAF /* GLView.m in Sources */,
+				C6CA07E8218C279400A2733A /* GLProgram.m in Sources */,
 				DFD50FA91D50731300819CAF /* AppDelegate.m in Sources */,
 				DFD50FA61D50731300819CAF /* main.m in Sources */,
 			);
@@ -308,6 +322,7 @@
 				DFD50FBA1D50731300819CAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

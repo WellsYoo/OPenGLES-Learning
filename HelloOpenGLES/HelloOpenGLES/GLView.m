@@ -79,6 +79,53 @@
     // 检查framebuffer是否创建成功
     NSError *error;
     NSAssert1([self checkFramebuffer:&error], @"%@",error.userInfo[@"ErrorMessage"]);
+    
+    
+    
+    // 载入指定的shader
+    _glProgram = [[GLProgram alloc] initWithVertexShaderFilename:@"1"
+                                          fragmentShaderFilename:@"1"];
+    if (!_glProgram.initialized)
+    {
+        // 绑定顶点属性数组（VAO）到一个指定的id
+        [_glProgram addAttribute:@"position"];
+        [_glProgram addAttribute:@"color"];
+        
+        // 链接Program
+        if (![_glProgram link])
+        {
+            // 失败 输出日志
+            NSString *progLog = [_glProgram programLog];
+            NSLog(@"Program link log: %@", progLog);
+            NSString *fragLog = [_glProgram fragmentShaderLog];
+            NSLog(@"Fragment shader compile log: %@", fragLog);
+            NSString *vertLog = [_glProgram vertexShaderLog];
+            NSLog(@"Vertex shader compile log: %@", vertLog);
+            _glProgram = nil;
+            NSAssert(NO, @"Filter shader link failed");
+        }
+    }
+    
+    // 获取顶点属性数组（VAO）的id
+    _position = [_glProgram attributeIndex:@"position"];
+    _color = [_glProgram attributeIndex:@"color"];
+    
+    
+    // 创建VBO对象
+    //    glGenBuffers(1, &_bufferData);
+    //
+    //    // 绑定当前VBO对象到GL_ARRAY_BUFFER
+    //    glBindBuffer(GL_ARRAY_BUFFER, _bufferData);
+    
+    // 向VBO传输数据，并告诉它我们的数据变动的时机
+    //    glBufferData(GL_ARRAY_BUFFER, sizeof(g_bufferDatas), g_bufferDatas, GL_STATIC_DRAW);
+    
+    // 创建VBO对象
+    //    glGenBuffers(1, &_indexsBuffer);
+    //
+    //    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexsBuffer);
+    
+    //    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(gl_index_buffer_data), gl_index_buffer_data, GL_STATIC_DRAW);
 }
 
 - (BOOL)checkFramebuffer:(NSError *__autoreleasing *)error
@@ -136,12 +183,72 @@
 
 - (void)render
 {
+//    // 因为GL的所有API都是基于最后一次绑定的对象作为作用对象。有很多错误是因为没有绑定或者绑定了错误的对象导致得到了错误的结果。
+//    // 所以每次在修改GL对象时，先绑定一次要修改的对象。
+//    glBindFramebuffer(GL_FRAMEBUFFER, _framebuffer);
+//    glBindRenderbuffer(GL_RENDERBUFFER, _renderbuffer);
+//    glClearColor(0, 1, 1, 1);
+//    glClear(GL_COLOR_BUFFER_BIT);
+//    
+//    // 做完所有绘制操作后，最终呈现到屏幕上
+//    [_context presentRenderbuffer:GL_RENDERBUFFER];
+    
+    
     // 因为GL的所有API都是基于最后一次绑定的对象作为作用对象。有很多错误是因为没有绑定或者绑定了错误的对象导致得到了错误的结果。
     // 所以每次在修改GL对象时，先绑定一次要修改的对象。
     glBindFramebuffer(GL_FRAMEBUFFER, _framebuffer);
     glBindRenderbuffer(GL_RENDERBUFFER, _renderbuffer);
-    glClearColor(0, 1, 1, 1);
+    glBindBuffer(GL_ARRAY_BUFFER, _bufferData);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexsBuffer);
+    
+    glClearColor(0, 1, 0, 1);
     glClear(GL_COLOR_BUFFER_BIT);
+    
+    
+    // viewPort关系着GL坐标系的大小及位置
+    glViewport(0, 0, self.frame.size.width, self.frame.size.height);
+    
+    // 使用program
+    [_glProgram use];
+    
+    //启用顶点属性数组（VAO）
+    glEnableVertexAttribArray(_position);
+    glEnableVertexAttribArray(_color);
+    
+    
+    // 包含3个3维向量的数组
+    static const GLfloat g_vertex_buffer_data[] = {
+        -1.0f, -1.0f, 0.0f,
+        1.0f, -1.0f, 0.0f,
+        0.0f, 1.0f, 0.0f,
+//            1.0f, -1.0f, 0.0f,
+//            -1.0f, 1.0f, 0.0f,
+//                1.0f, 1.0f, 0.0f,
+    };
+    
+    // 包含3个4维向量的数组
+    static const GLfloat g_color_buffer_data[] =
+    {
+        1.0,0.0,0.0,1.0,
+        0.0,1.0,0.0,1.0,
+        0.0,0.0,1.0,1.0,
+        //    0.0,1.0,0.0,1.0,
+        //    0.0,0.0,1.0,1.0,
+        //        1.0,1.0,1.0,1.0,
+    };
+    
+    
+    //向顶点属性传递数据
+    glVertexAttribPointer(_position, 3, GL_FLOAT, NO, 0, g_vertex_buffer_data);
+    glVertexAttribPointer(_color, 4, GL_FLOAT, NO, 0, g_color_buffer_data);
+    
+    
+//        glVertexAttribPointer(_position, 3, GL_FLOAT, NO, sizeof(MTGLBufferData), 0);
+    //    glVertexAttribPointer(_color, 4, GL_FLOAT, NO, sizeof(MTGLBufferData), (void *)(sizeof(GLfloat) * 3));
+    
+    //调用glDrawArrays
+    glDrawArrays(GL_TRIANGLE_FAN, 0, 3);
+    //    glDrawElements(GL_TRIANGLES, sizeof(gl_index_buffer_data) / sizeof(GLubyte), GL_UNSIGNED_BYTE, NULL);
     
     // 做完所有绘制操作后，最终呈现到屏幕上
     [_context presentRenderbuffer:GL_RENDERBUFFER];
