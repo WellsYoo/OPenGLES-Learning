@@ -19,8 +19,8 @@
     
     GLProgram *_glProgram;
     GLuint _position,_color;
-    GLuint _bufferData;
-    GLuint _indexsBuffer;
+//    GLuint _bufferData;
+//    GLuint _indexsBuffer;
 }
 
 @end

@@ -198,8 +198,8 @@
     // 所以每次在修改GL对象时，先绑定一次要修改的对象。
     glBindFramebuffer(GL_FRAMEBUFFER, _framebuffer);
     glBindRenderbuffer(GL_RENDERBUFFER, _renderbuffer);
-    glBindBuffer(GL_ARRAY_BUFFER, _bufferData);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexsBuffer);
+//    glBindBuffer(GL_ARRAY_BUFFER, _bufferData);
+//    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexsBuffer);
     
     glClearColor(0, 1, 0, 1);
     glClear(GL_COLOR_BUFFER_BIT);
