@@ -21,6 +21,16 @@
     GLuint _position,_color;
 //    GLuint _bufferData;
 //    GLuint _indexsBuffer;
+    
+    GLfloat *_positions;
+    
 }
+
+
+- (void)open:(NSTimeInterval)duration
+  completion:(void (^)())completion;
+
+- (void)close:(NSTimeInterval)duration
+   completion:(void (^)())completion;
 
 @end

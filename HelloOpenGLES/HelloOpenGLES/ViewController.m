@@ -22,9 +22,34 @@
     [self.view addSubview:self.glView];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self open];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)open {
+    [self.glView open:3.0
+           completion:^() {
+               dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                   [self close];
+               });
+           }];
+}
+
+- (void)close {
+    [self.glView close:3.0
+            completion:^() {
+                
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self open];
+                });
+            }];
 }
 
 @end

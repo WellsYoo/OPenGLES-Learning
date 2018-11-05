@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C649F95E218FE07800E52B5C /* MTTimerTask.m in Sources */ = {isa = PBXBuildFile; fileRef = C649F95C218FE07700E52B5C /* MTTimerTask.m */; };
 		C6CA07E8218C279400A2733A /* GLProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CA07E6218C279300A2733A /* GLProgram.m */; };
 		C6CA07EB218C28AE00A2733A /* 1.fsh in Resources */ = {isa = PBXBuildFile; fileRef = C6CA07E9218C28AD00A2733A /* 1.fsh */; };
 		C6CA07EC218C28AE00A2733A /* 1.vsh in Resources */ = {isa = PBXBuildFile; fileRef = C6CA07EA218C28AD00A2733A /* 1.vsh */; };
+		C97C36710CAD0F78F4F3A4D0 /* libPods-HelloOpenGLES.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2C877BCAE3DC6A4C09C3EE9 /* libPods-HelloOpenGLES.a */; };
 		DFD50FA61D50731300819CAF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD50FA51D50731300819CAF /* main.m */; };
 		DFD50FA91D50731300819CAF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD50FA81D50731300819CAF /* AppDelegate.m */; };
 		DFD50FAC1D50731300819CAF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD50FAB1D50731300819CAF /* ViewController.m */; };
@@ -20,10 +22,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		375833E7E3854CCA3E960429 /* Pods-HelloOpenGLES.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloOpenGLES.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HelloOpenGLES/Pods-HelloOpenGLES.debug.xcconfig"; sourceTree = "<group>"; };
+		C649F95C218FE07700E52B5C /* MTTimerTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTTimerTask.m; sourceTree = "<group>"; };
+		C649F95D218FE07700E52B5C /* MTTimerTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTTimerTask.h; sourceTree = "<group>"; };
 		C6CA07E6218C279300A2733A /* GLProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLProgram.m; sourceTree = "<group>"; };
 		C6CA07E7218C279300A2733A /* GLProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLProgram.h; sourceTree = "<group>"; };
 		C6CA07E9218C28AD00A2733A /* 1.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 1.fsh; sourceTree = "<group>"; };
 		C6CA07EA218C28AD00A2733A /* 1.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 1.vsh; sourceTree = "<group>"; };
+		C9C3E3E0C96E08989D2E3899 /* Pods-HelloOpenGLES.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloOpenGLES.release.xcconfig"; path = "Pods/Target Support Files/Pods-HelloOpenGLES/Pods-HelloOpenGLES.release.xcconfig"; sourceTree = "<group>"; };
 		DFD50FA11D50731300819CAF /* HelloOpenGLES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloOpenGLES.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFD50FA51D50731300819CAF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DFD50FA71D50731300819CAF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -36,6 +42,7 @@
 		DFD50FB51D50731300819CAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFD50FC01D50857600819CAF /* GLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLView.h; sourceTree = "<group>"; };
 		DFD50FC11D50857600819CAF /* GLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLView.m; sourceTree = "<group>"; };
+		F2C877BCAE3DC6A4C09C3EE9 /* libPods-HelloOpenGLES.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HelloOpenGLES.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,17 +50,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C97C36710CAD0F78F4F3A4D0 /* libPods-HelloOpenGLES.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34EE3C345613136AEA2EDD05 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				375833E7E3854CCA3E960429 /* Pods-HelloOpenGLES.debug.xcconfig */,
+				C9C3E3E0C96E08989D2E3899 /* Pods-HelloOpenGLES.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		DFD50F981D50731300819CAF = {
 			isa = PBXGroup;
 			children = (
 				DFD50FA31D50731300819CAF /* HelloOpenGLES */,
 				DFD50FA21D50731300819CAF /* Products */,
+				34EE3C345613136AEA2EDD05 /* Pods */,
+				EC8F69E7F0C000F0A4B8D100 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +95,8 @@
 				C6CA07E6218C279300A2733A /* GLProgram.m */,
 				DFD50FC01D50857600819CAF /* GLView.h */,
 				DFD50FC11D50857600819CAF /* GLView.m */,
+				C649F95D218FE07700E52B5C /* MTTimerTask.h */,
+				C649F95C218FE07700E52B5C /* MTTimerTask.m */,
 				C6CA07E9218C28AD00A2733A /* 1.fsh */,
 				C6CA07EA218C28AD00A2733A /* 1.vsh */,
 				DFD50FAD1D50731300819CAF /* Main.storyboard */,
@@ -95,6 +116,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		EC8F69E7F0C000F0A4B8D100 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F2C877BCAE3DC6A4C09C3EE9 /* libPods-HelloOpenGLES.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -102,6 +131,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DFD50FB81D50731300819CAF /* Build configuration list for PBXNativeTarget "HelloOpenGLES" */;
 			buildPhases = (
+				45F9B114CA1DEDDD29EC144C /* [CP] Check Pods Manifest.lock */,
 				DFD50F9D1D50731300819CAF /* Sources */,
 				DFD50F9E1D50731300819CAF /* Frameworks */,
 				DFD50F9F1D50731300819CAF /* Resources */,
@@ -162,12 +192,34 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		45F9B114CA1DEDDD29EC144C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HelloOpenGLES-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DFD50F9D1D50731300819CAF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				DFD50FAC1D50731300819CAF /* ViewController.m in Sources */,
+				C649F95E218FE07800E52B5C /* MTTimerTask.m in Sources */,
 				DFD50FC21D50857600819CAF /* GLView.m in Sources */,
 				C6CA07E8218C279400A2733A /* GLProgram.m in Sources */,
 				DFD50FA91D50731300819CAF /* AppDelegate.m in Sources */,
@@ -283,6 +335,7 @@
 		};
 		DFD50FB91D50731300819CAF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 375833E7E3854CCA3E960429 /* Pods-HelloOpenGLES.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HelloOpenGLES/Info.plist;
@@ -294,6 +347,7 @@
 		};
 		DFD50FBA1D50731300819CAF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9C3E3E0C96E08989D2E3899 /* Pods-HelloOpenGLES.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HelloOpenGLES/Info.plist;

@@ -1,0 +1,517 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4867B2EF5ECBE83E00EC099C4BF5A394 /* Pods-HelloOpenGLES-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F504F5B2748B40E0285B6EA131D4DF32 /* Pods-HelloOpenGLES-dummy.m */; };
+		5276A46F90A11581F259698CC6E2C4BB /* easing.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A97FDB387F82B5103496B437B31D7A5 /* easing.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		6744F19B0401CDDD4F97E14BFADB89CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F9A0E952988935C32EDDB1429D7133 /* Foundation.framework */; };
+		6E89538D1EC7C2A0A9D2C194025A9843 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F9A0E952988935C32EDDB1429D7133 /* Foundation.framework */; };
+		81F307E6175A516ABBB1DD6F4C60D8F5 /* CAKeyframeAnimation+AHEasing.h in Headers */ = {isa = PBXBuildFile; fileRef = AF979FD852084D43CC029D38B16CC84E /* CAKeyframeAnimation+AHEasing.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		85475E5EB2309583AF2039ECD9D5E796 /* CAKeyframeAnimation+AHEasing.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1BED84FF73A303957349AE48E0D838 /* CAKeyframeAnimation+AHEasing.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		AE58263F9754C63136052EF13B7B4577 /* easing.c in Sources */ = {isa = PBXBuildFile; fileRef = 0BADE8647B675AF401A0358CC4772815 /* easing.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		B6A47CD8A57B6516EA156834E6CC020D /* AHEasing-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2D70EAA1EB8704041BF53755BDD4CA /* AHEasing-dummy.m */; };
+		F3F61DD8F1AC645848CCCABA769EA4DB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2770B482BFE91273C8560623F1422C /* QuartzCore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		28E14EBF9B4A51ED013CB2F88BCE31F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A59141EE0A92952631B630BF7D1CAA3F;
+			remoteInfo = AHEasing;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0B938E423700E98CDD02ACC293FF8014 /* Pods-HelloOpenGLES.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HelloOpenGLES.debug.xcconfig"; sourceTree = "<group>"; };
+		0BADE8647B675AF401A0358CC4772815 /* easing.c */ = {isa = PBXFileReference; includeInIndex = 1; name = easing.c; path = AHEasing/easing.c; sourceTree = "<group>"; };
+		1149EC5047A3C798BFD5860AD8CC395A /* libPods-HelloOpenGLES.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-HelloOpenGLES.a"; path = "libPods-HelloOpenGLES.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		24A70AD271042570E179F28D033F1EA7 /* Pods-HelloOpenGLES.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HelloOpenGLES.release.xcconfig"; sourceTree = "<group>"; };
+		3A2D70EAA1EB8704041BF53755BDD4CA /* AHEasing-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AHEasing-dummy.m"; sourceTree = "<group>"; };
+		48543AEB7F314833C04ECD69EC292A54 /* Pods-HelloOpenGLES-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HelloOpenGLES-acknowledgements.plist"; sourceTree = "<group>"; };
+		54F9A0E952988935C32EDDB1429D7133 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		638C11263723969F71F1585387F7C8BF /* Pods-HelloOpenGLES-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HelloOpenGLES-frameworks.sh"; sourceTree = "<group>"; };
+		8A97FDB387F82B5103496B437B31D7A5 /* easing.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = easing.h; path = AHEasing/easing.h; sourceTree = "<group>"; };
+		8EC042C0AB251AEB3E59EDE7AAD7502A /* AHEasing-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AHEasing-prefix.pch"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		AF979FD852084D43CC029D38B16CC84E /* CAKeyframeAnimation+AHEasing.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CAKeyframeAnimation+AHEasing.h"; path = "AHEasing/CAKeyframeAnimation+AHEasing.h"; sourceTree = "<group>"; };
+		BD1BED84FF73A303957349AE48E0D838 /* CAKeyframeAnimation+AHEasing.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CAKeyframeAnimation+AHEasing.m"; path = "AHEasing/CAKeyframeAnimation+AHEasing.m"; sourceTree = "<group>"; };
+		CA3FF750B74C2A072FECAC714E77BBC2 /* Pods-HelloOpenGLES-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HelloOpenGLES-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D0BB4D17AEA651DF52090083BD9DC35E /* Pods-HelloOpenGLES-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HelloOpenGLES-resources.sh"; sourceTree = "<group>"; };
+		EE6B7A15F21225B8E90A0E99511DCC0D /* AHEasing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AHEasing.xcconfig; sourceTree = "<group>"; };
+		F504F5B2748B40E0285B6EA131D4DF32 /* Pods-HelloOpenGLES-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HelloOpenGLES-dummy.m"; sourceTree = "<group>"; };
+		FB367D75B1D68576AE449D2464361686 /* libAHEasing.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libAHEasing.a; path = libAHEasing.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC2770B482BFE91273C8560623F1422C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BF4165B81509182ACAF7FDC3134271CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6744F19B0401CDDD4F97E14BFADB89CC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E08FC8DF4FC48D40A897A191E14051FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E89538D1EC7C2A0A9D2C194025A9843 /* Foundation.framework in Frameworks */,
+				F3F61DD8F1AC645848CCCABA769EA4DB /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B1D7F8CC7B7C778A0166F84AD9DF013 /* Pods-HelloOpenGLES */ = {
+			isa = PBXGroup;
+			children = (
+				CA3FF750B74C2A072FECAC714E77BBC2 /* Pods-HelloOpenGLES-acknowledgements.markdown */,
+				48543AEB7F314833C04ECD69EC292A54 /* Pods-HelloOpenGLES-acknowledgements.plist */,
+				F504F5B2748B40E0285B6EA131D4DF32 /* Pods-HelloOpenGLES-dummy.m */,
+				638C11263723969F71F1585387F7C8BF /* Pods-HelloOpenGLES-frameworks.sh */,
+				D0BB4D17AEA651DF52090083BD9DC35E /* Pods-HelloOpenGLES-resources.sh */,
+				0B938E423700E98CDD02ACC293FF8014 /* Pods-HelloOpenGLES.debug.xcconfig */,
+				24A70AD271042570E179F28D033F1EA7 /* Pods-HelloOpenGLES.release.xcconfig */,
+			);
+			name = "Pods-HelloOpenGLES";
+			path = "Target Support Files/Pods-HelloOpenGLES";
+			sourceTree = "<group>";
+		};
+		2F0FB55A79B14790E2BC0E99BEA1007D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FB367D75B1D68576AE449D2464361686 /* libAHEasing.a */,
+				1149EC5047A3C798BFD5860AD8CC395A /* libPods-HelloOpenGLES.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		363254B703A05BFEA7F975C9348FC23F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				EE6B7A15F21225B8E90A0E99511DCC0D /* AHEasing.xcconfig */,
+				3A2D70EAA1EB8704041BF53755BDD4CA /* AHEasing-dummy.m */,
+				8EC042C0AB251AEB3E59EDE7AAD7502A /* AHEasing-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/AHEasing";
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				978007DCB56F415BE390E0F949D4D4E5 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				AB1E9CCA3E845A61B873E9006CB74D62 /* Pods */,
+				2F0FB55A79B14790E2BC0E99BEA1007D /* Products */,
+				814248A6EA2E2F2C796322CE67524747 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		814248A6EA2E2F2C796322CE67524747 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1B1D7F8CC7B7C778A0166F84AD9DF013 /* Pods-HelloOpenGLES */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		978007DCB56F415BE390E0F949D4D4E5 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				54F9A0E952988935C32EDDB1429D7133 /* Foundation.framework */,
+				FC2770B482BFE91273C8560623F1422C /* QuartzCore.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		AB1E9CCA3E845A61B873E9006CB74D62 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ADA76F1A86FF50C0142E9E2FB848C698 /* AHEasing */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		ADA76F1A86FF50C0142E9E2FB848C698 /* AHEasing */ = {
+			isa = PBXGroup;
+			children = (
+				AF979FD852084D43CC029D38B16CC84E /* CAKeyframeAnimation+AHEasing.h */,
+				BD1BED84FF73A303957349AE48E0D838 /* CAKeyframeAnimation+AHEasing.m */,
+				0BADE8647B675AF401A0358CC4772815 /* easing.c */,
+				8A97FDB387F82B5103496B437B31D7A5 /* easing.h */,
+				363254B703A05BFEA7F975C9348FC23F /* Support Files */,
+			);
+			name = AHEasing;
+			path = AHEasing;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		E49A4B5A9F14CC8EE10089089CBBB2EA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81F307E6175A516ABBB1DD6F4C60D8F5 /* CAKeyframeAnimation+AHEasing.h in Headers */,
+				5276A46F90A11581F259698CC6E2C4BB /* easing.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		5369A82B1B9D880619C519436D72E31E /* Pods-HelloOpenGLES */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCC6C2FFDD647BD6A48BC0208241BB5E /* Build configuration list for PBXNativeTarget "Pods-HelloOpenGLES" */;
+			buildPhases = (
+				4899C6018C3649225223AD938C4CC308 /* Sources */,
+				BF4165B81509182ACAF7FDC3134271CF /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A898F5980C69D9AD4058356BD3921EBE /* PBXTargetDependency */,
+			);
+			name = "Pods-HelloOpenGLES";
+			productName = "Pods-HelloOpenGLES";
+			productReference = 1149EC5047A3C798BFD5860AD8CC395A /* libPods-HelloOpenGLES.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		A59141EE0A92952631B630BF7D1CAA3F /* AHEasing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00891BC3EA0CBB8CF4554A8A14AA348B /* Build configuration list for PBXNativeTarget "AHEasing" */;
+			buildPhases = (
+				EC59D67B788D184CC4C86C4E09503F75 /* Sources */,
+				E08FC8DF4FC48D40A897A191E14051FC /* Frameworks */,
+				E49A4B5A9F14CC8EE10089089CBBB2EA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AHEasing;
+			productName = AHEasing;
+			productReference = FB367D75B1D68576AE449D2464361686 /* libAHEasing.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 2F0FB55A79B14790E2BC0E99BEA1007D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A59141EE0A92952631B630BF7D1CAA3F /* AHEasing */,
+				5369A82B1B9D880619C519436D72E31E /* Pods-HelloOpenGLES */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4899C6018C3649225223AD938C4CC308 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4867B2EF5ECBE83E00EC099C4BF5A394 /* Pods-HelloOpenGLES-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC59D67B788D184CC4C86C4E09503F75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6A47CD8A57B6516EA156834E6CC020D /* AHEasing-dummy.m in Sources */,
+				85475E5EB2309583AF2039ECD9D5E796 /* CAKeyframeAnimation+AHEasing.m in Sources */,
+				AE58263F9754C63136052EF13B7B4577 /* easing.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A898F5980C69D9AD4058356BD3921EBE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AHEasing;
+			target = A59141EE0A92952631B630BF7D1CAA3F /* AHEasing */;
+			targetProxy = 28E14EBF9B4A51ED013CB2F88BCE31F2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2FD675F694022F1C35EB79E6CA9BEC88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE6B7A15F21225B8E90A0E99511DCC0D /* AHEasing.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/AHEasing/AHEasing-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = AHEasing;
+				PRODUCT_NAME = AHEasing;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		767595DF247BA93A32DEC541CE77CF3F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B938E423700E98CDD02ACC293FF8014 /* Pods-HelloOpenGLES.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8B33C5230DE4A9DFA6D8F46505DD7AF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		B42B54097A876E8A982CBF5DAA91B1AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		D1142C1AB9124448E5DDD4D2DACA2AD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE6B7A15F21225B8E90A0E99511DCC0D /* AHEasing.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/AHEasing/AHEasing-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = AHEasing;
+				PRODUCT_NAME = AHEasing;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FE150BF313A28CC8310BC47FDA73929F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24A70AD271042570E179F28D033F1EA7 /* Pods-HelloOpenGLES.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		00891BC3EA0CBB8CF4554A8A14AA348B /* Build configuration list for PBXNativeTarget "AHEasing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FD675F694022F1C35EB79E6CA9BEC88 /* Debug */,
+				D1142C1AB9124448E5DDD4D2DACA2AD4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B33C5230DE4A9DFA6D8F46505DD7AF7 /* Debug */,
+				B42B54097A876E8A982CBF5DAA91B1AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCC6C2FFDD647BD6A48BC0208241BB5E /* Build configuration list for PBXNativeTarget "Pods-HelloOpenGLES" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				767595DF247BA93A32DEC541CE77CF3F /* Debug */,
+				FE150BF313A28CC8310BC47FDA73929F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
