@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GLProgram.h"
+
+@class GLProgram,GLTexture;
 
 @interface GLView : UIView
 {
@@ -18,11 +19,12 @@
     CGSize _oldSize;
     
     GLProgram *_glProgram;
-    GLuint _position,_color;
+    GLuint _position,_color,_inputImageTexture,_inputTextureCoordinate;
 //    GLuint _bufferData;
 //    GLuint _indexsBuffer;
     
     GLfloat *_positions;
+    GLTexture *_texture;
     
 }
 

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C649F95E218FE07800E52B5C /* MTTimerTask.m in Sources */ = {isa = PBXBuildFile; fileRef = C649F95C218FE07700E52B5C /* MTTimerTask.m */; };
+		C649F961218FEE6B00E52B5C /* GLTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = C649F95F218FEE6B00E52B5C /* GLTexture.m */; };
+		C649F965218FEF6500E52B5C /* 123.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C649F964218FEF6500E52B5C /* 123.jpg */; };
 		C6CA07E8218C279400A2733A /* GLProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CA07E6218C279300A2733A /* GLProgram.m */; };
 		C6CA07EB218C28AE00A2733A /* 1.fsh in Resources */ = {isa = PBXBuildFile; fileRef = C6CA07E9218C28AD00A2733A /* 1.fsh */; };
 		C6CA07EC218C28AE00A2733A /* 1.vsh in Resources */ = {isa = PBXBuildFile; fileRef = C6CA07EA218C28AD00A2733A /* 1.vsh */; };
@@ -25,6 +27,9 @@
 		375833E7E3854CCA3E960429 /* Pods-HelloOpenGLES.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloOpenGLES.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HelloOpenGLES/Pods-HelloOpenGLES.debug.xcconfig"; sourceTree = "<group>"; };
 		C649F95C218FE07700E52B5C /* MTTimerTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTTimerTask.m; sourceTree = "<group>"; };
 		C649F95D218FE07700E52B5C /* MTTimerTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTTimerTask.h; sourceTree = "<group>"; };
+		C649F95F218FEE6B00E52B5C /* GLTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLTexture.m; sourceTree = "<group>"; };
+		C649F960218FEE6B00E52B5C /* GLTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLTexture.h; sourceTree = "<group>"; };
+		C649F964218FEF6500E52B5C /* 123.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 123.jpg; sourceTree = "<group>"; };
 		C6CA07E6218C279300A2733A /* GLProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLProgram.m; sourceTree = "<group>"; };
 		C6CA07E7218C279300A2733A /* GLProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLProgram.h; sourceTree = "<group>"; };
 		C6CA07E9218C28AD00A2733A /* 1.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 1.fsh; sourceTree = "<group>"; };
@@ -93,12 +98,15 @@
 				DFD50FAB1D50731300819CAF /* ViewController.m */,
 				C6CA07E7218C279300A2733A /* GLProgram.h */,
 				C6CA07E6218C279300A2733A /* GLProgram.m */,
+				C649F960218FEE6B00E52B5C /* GLTexture.h */,
+				C649F95F218FEE6B00E52B5C /* GLTexture.m */,
 				DFD50FC01D50857600819CAF /* GLView.h */,
 				DFD50FC11D50857600819CAF /* GLView.m */,
 				C649F95D218FE07700E52B5C /* MTTimerTask.h */,
 				C649F95C218FE07700E52B5C /* MTTimerTask.m */,
 				C6CA07E9218C28AD00A2733A /* 1.fsh */,
 				C6CA07EA218C28AD00A2733A /* 1.vsh */,
+				C649F964218FEF6500E52B5C /* 123.jpg */,
 				DFD50FAD1D50731300819CAF /* Main.storyboard */,
 				DFD50FB01D50731300819CAF /* Assets.xcassets */,
 				DFD50FB21D50731300819CAF /* LaunchScreen.storyboard */,
@@ -182,6 +190,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C649F965218FEF6500E52B5C /* 123.jpg in Resources */,
 				DFD50FB41D50731300819CAF /* LaunchScreen.storyboard in Resources */,
 				C6CA07EB218C28AE00A2733A /* 1.fsh in Resources */,
 				DFD50FB11D50731300819CAF /* Assets.xcassets in Resources */,
@@ -223,6 +232,7 @@
 				DFD50FC21D50857600819CAF /* GLView.m in Sources */,
 				C6CA07E8218C279400A2733A /* GLProgram.m in Sources */,
 				DFD50FA91D50731300819CAF /* AppDelegate.m in Sources */,
+				C649F961218FEE6B00E52B5C /* GLTexture.m in Sources */,
 				DFD50FA61D50731300819CAF /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

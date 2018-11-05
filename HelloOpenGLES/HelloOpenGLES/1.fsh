@@ -1,8 +1,12 @@
 precision highp float;
 
+uniform sampler2D inputImageTexture;
+
 varying vec4 inputColor;
+varying vec2 textureCoordinate;
 
 void main()
 {
-    gl_FragColor = inputColor;
+    lowp vec4 color = texture2D(inputImageTexture,textureCoordinate);
+    gl_FragColor = color;
 }

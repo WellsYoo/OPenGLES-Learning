@@ -9,7 +9,10 @@
 #import "GLView.h"
 #import "MTTimerTask.h"
 #import <GLKit/GLKit.h>
-//@import OpenGLES;
+#import "GLTexture.h"
+#import "GLProgram.h"
+
+@import OpenGLES;
 
 static const GLubyte gl_index_buffer_data[] = {
     0,1,2,
@@ -97,6 +100,7 @@ static const GLubyte gl_index_buffer_data[] = {
         // 绑定顶点属性到一个指定的id
         [_glProgram addAttribute:@"position"];
         [_glProgram addAttribute:@"color"];
+        [_glProgram addAttribute:@"inputTextureCoordinate"];
         
         // 链接Program
         if (![_glProgram link])
@@ -117,10 +121,16 @@ static const GLubyte gl_index_buffer_data[] = {
     _position = [_glProgram attributeIndex:@"position"];
     _color = [_glProgram attributeIndex:@"color"];
     
-    if (!_positions) {
-        _positions = malloc(sizeof(GLfloat) * 8 * 3);
-        [self calculationGLData:1.0 isOpen:NO];
-    }
+//    if (!_positions) {
+//        _positions = malloc(sizeof(GLfloat) * 8 * 3);
+//        [self calculationGLData:1.0 isOpen:NO];
+//    }
+    
+    _inputTextureCoordinate = [_glProgram attributeIndex:@"inputTextureCoordinate"];
+    
+    _inputImageTexture = [_glProgram uniformIndex:@"inputImageTexture"];
+    
+    _texture = [[UIImage imageNamed:@"123.jpg"] texture];
 }
 
 - (BOOL)checkFramebuffer:(NSError *__autoreleasing *)error
